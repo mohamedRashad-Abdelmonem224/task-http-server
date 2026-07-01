@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
             return res.end(JSON.stringify(books));
         }
         else if (method === "GET" && /^\/books\/\d+$/.test(pathname)) {
-            const id = Number(pathname.split("/")[2]); // تم التصحيح هنا [2]
+            const id = Number(pathname.split("/")[2]); 
             const books = await readBooks();
             const book = books.find((b) => b.id === id);
 
